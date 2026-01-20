@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOVA PESADOS - Máquinas Pesadas de Qualidade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-escuro: #0a1a2e;
+            --azul-vibrante: #1e5aa8;
+            --azul-claro: #2a7dd1;
+            --branco: #ffffff;
+            --cinza-claro: #f5f5f5;
+            --cinza-escuro: #333333;
+            --verde: #28a745;
+            --dourado: #ffd700;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--cinza-escuro);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--azul-escuro);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--azul-vibrante);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '⚙';
+            font-size: 30px;
+            color: var(--branco);
+        }
+
+        .logo-text {
+            color: var(--branco);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--azul-claro);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--azul-claro);
+        }
+
+        .whatsapp-btn {
+            background: var(--verde);
+            color: var(--branco);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-vibrante) 100%);
+            color: var(--branco);
+            padding: 150px 2rem 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s;
+        }
+
+        .btn-primary {
+            background: var(--verde);
+            color: var(--branco);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--branco);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--branco);
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--branco);
+            color: var(--azul-escuro);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--branco);
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--azul-vibrante);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--cinza-escuro);
+            font-size: 1.1rem;
+        }
+
+        /* Máquinas Section */
+        .maquinas {
+            padding: 5rem 2rem;
+            background: var(--cinza-claro);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--azul-escuro);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--cinza-escuro);
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .maquinas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .maquina-card {
+            background: var(--branco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .maquina-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .maquina-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--azul-vibrante), var(--azul-claro));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .maquina-image::before {
+            content: '🚜';
+            font-size: 120px;
+            opacity: 0.3;
+        }
+
+        .maquina-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--verde);
+            color: var(--branco);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .maquina-content {
+            padding: 1.5rem;
+        }
+
+        .maquina-title {
+            font-size: 1.5rem;
+            color: var(--azul-escuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .maquina-desc {
+            color: var(--cinza-escuro);
+            margin-bottom: 1rem;
+            min-height: 60px;
+        }
+
+        .maquina-specs {
+            background: var(--cinza-claro);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: bold;
+            color: var(--azul-escuro);
+        }
+
+        .maquina-price {
+            font-size: 2rem;
+            color: var(--verde);
+            font-weight: bold;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .maquina-price small {
+            font-size: 1rem;
+            color: var(--cinza-escuro);
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .maquina-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-card {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-comprar {
+            background: var(--azul-vibrante);
+            color: var(--branco);
+        }
+
+        .btn-comprar:hover {
+            background: var(--azul-escuro);
+        }
+
+        .btn-detalhes {
+            background: var(--cinza-claro);
+            color: var(--azul-escuro);
+            border: 2px solid var(--azul-vibrante);
+        }
+
+        .btn-detalhes:hover {
+            background: var(--azul-vibrante);
+            color: var(--branco);
+        }
+
+        /* Galeria Section */
+        .galeria {
+            padding: 5rem 2rem;
+            background: var(--branco);
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .galeria-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10,26,46,0.9), transparent);
+            color: var(--branco);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover .galeria-overlay {
+            transform: translateY(0);
+        }
+
+        /* Depoimentos */
+        .depoimentos {
+            padding: 5rem 2rem;
+            background: var(--azul-escuro);
+            color: var(--branco);
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .depoimento-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .depoimento-stars {
+            color: var(--dourado);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .depoimento-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .depoimento-author {
+            font-weight: bold;
+            color: var(--azul-claro);
+        }
+
+        /* Contato */
+        .contato {
+            padding: 5rem 2rem;
+            background: var(--cinza-claro);
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contato-info {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contato-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contato-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--azul-vibrante);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            font-size: 1.5rem;
+        }
+
+        .contato-form {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--azul-escuro);
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--azul-vibrante);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--azul-escuro);
+            color: var(--branco);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--azul-claro);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--branco);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--azul-claro);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--azul-vibrante);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--azul-claro);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background: var(--branco);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--azul-escuro);
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: var(--azul-vibrante);
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .contato-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .maquinas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <h1>INOVA PESADOS</h1>
+                    <p>Máquinas de Qualidade</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#maquinas">Máquinas</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/5527999975540" class="whatsapp-btn" target="_blank">
+                📱 WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h2>Potencializando suas Conquistas</h2>
+        <p>Máquinas pesadas de qualidade para transformar seus projetos</p>
+        <div class="hero-buttons">
+            <a href="#maquinas" class="btn-primary">Ver Máquinas</a>
+            <a href="#contato" class="btn-secondary">Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Máquinas Vendidas</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Vistoriadas</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Estados Atendidos</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">Clientes Satisfeitos</span>
+        </div>
+    </section>
+
+    <!-- Máquinas Section -->
+    <section class="maquinas" id="maquinas">
+        <div class="container">
+            <h2 class="section-title">Nossas Máquinas</h2>
+            <p class="section-subtitle">Equipamentos seminovos com qualidade garantida e procedência comprovada</p>
+            
+            <div class="maquinas-grid">
+                <!-- Máquina 1 -->
+                <div class="maquina-card">
+                    <div class="maquina-image">
+                        <span class="maquina-badge">Destaque</span>
+                    </div>
+                    <div class="maquina-content">
+                        <h3 class="maquina-title">Escavadeira Hidráulica CAT 320D</h3>
+                        <p class="maquina-desc">Escavadeira de alto desempenho, ideal para obras de grande porte. Equipamento revisado e em excelente estado.</p>
+                        <div class="maquina-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Ano:</span>
+                                <span>2018</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Horímetro:</span>
+                                <span>3.500h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Peso:</span>
+                                <span>20.5 ton</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Estado:</span>
+                                <span>Excelente</span>
+                            </div>
+                        </div>
+                        <div class="maquina-price">
+                            R$ 485.000,00
+                            <small>Financiamento disponível</small>
+                        </div>
+                        <div class="maquina-actions">
+                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-card btn-comprar" target="_blank">Comprar</a>
+                            <button class="btn-card btn-detalhes" onclick="openModal('modal1')">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Máquina 2 -->
+                <div class="maquina-card">
+                    <div class="maquina-image">
+                        <span class="maquina-badge">Novo</span>
+                    </div>
+                    <div class="maquina-content">
+                        <h3 class="maquina-title">Retroescavadeira CASE 580M</h3>
+                        <p class="maquina-desc">Versátil e robusta, perfeita para construção civil e obras diversas. Manutenção em dia.</p>
+                        <div class="maquina-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Ano:</span>
+                                <span>2019</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Horímetro:</span>
+                                <span>2.800h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Peso:</span>
+                                <span>7.8 ton</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Estado:</span>
+                                <span>Ótimo</span>
+                            </div>
+                        </div>
+                        <div class="maquina-price">
+                            R$ 320.000,00
+                            <small>Condições especiais</small>
+                        </div>
+                        <div class="maquina-actions">
+                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Retroescavadeira CASE 580M" class="btn-card btn-comprar" target="_blank">Comprar</a>
+                            <button class="btn-card btn-detalhes" onclick="openModal('modal2')">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Máquina 3 -->
+                <div class="maquina-card">
+                    <div class="maquina-image">
+                        <span class="maquina-badge">Oferta</span>
+                    </div>
+                    <div class="maquina-content">
+                        <h3 class="maquina-title">Caminhão Caçamba Scania P310</h3>
+                        <p class="maquina-desc">Caminhão robusto para transporte pesado. Motor revisado e documentação em dia.</p>
+                        <div class="maquina-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Ano:</span>
+                                <span>2017</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">KM:</span>
+                                <span>185.000 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Capacidade:</span>
+                                <span>25 m³</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Estado:</span>
+                                <span>Bom</span>
+                            </div>
+                        </div>
+                        <div class="maquina-price">
+                            R$ 285.000,00
+                            <small>Negociável</small>
+                        </div>
+                        <div class="maquina-actions">
+                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Caminhão Scania P310" class="btn-card btn-comprar" target="_blank">Comprar</a>
+                            <button class="btn-card btn-detalhes" onclick="openModal('modal3')">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Máquina 4 -->
+                <div class="maquina-card">
+                    <div class="maquina-image">
+                        <span class="maquina-badge">Destaque</span>
+                    </div>
+                    <div class="maquina-content">
+                        <h3 class="maquina-title">Mini Escavadeira Bobcat E35</h3>
+                        <p class="maquina-desc">Compacta e eficiente, ideal para obras urbanas e espaços reduzidos. Zero avarias.</p>
+                        <div class="maquina-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Ano:</span>
+                                <span>2020</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Horímetro:</span>
+                                <span>1.200h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Peso:</span>
+                                <span>3.5 ton</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Estado:</span>
+                                <span>Excelente</span>
+                            </div>
+                        </div>
+                        <div class="maquina-price">
+                            R$ 195.000,00
+                            <small>Melhor preço</small>
+                        </div>
+                        <div class="maquina-actions">
+                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Mini Escavadeira Bobcat E35" class="btn-card btn-comprar" target="_blank">Comprar</a>
+                            <button class="btn-card btn-detalhes" onclick="openModal('modal4')">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Máquina 5 -->
+                <div class="maquina-card">
+                    <div class="maquina-image">
+                        <span class="maquina-badge">Novo</span>
+                    </div>
+                    <div class="maquina-content">
+                        <h3 class="maquina-title">Trator de Esteira CAT D6T</h3>
+                        <p class="maquina-desc">Trator de esteira para terraplanagem e movimentação de terra. Equipamento premium.</p>
+                        <div class="maquina-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Ano:</span>
+                                <span>2016</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Horímetro:</span>
+                                <span>4.200h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Peso:</span>
+                                <span>18.2 ton</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Estado:</span>
+                                <span>Ótimo</span>
+                            </div>
+                        </div>
+                        <div class="maquina-price">
+                            R$ 420.000,00
+                            <small>Financiamento disponível</small>
+                        </div>
+                        <div class="maquina-actions">
+                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Trator de Esteira CAT D6T" class="btn-card btn-comprar" target="_blank">Comprar</a>
+                            <button class="btn-card btn-detalhes" onclick="openModal('modal5')">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Máquina 6 -->
+                <div class="maquina-card">
+                    <div class="maquina-image">
+                        <span class="maquina-badge">Oferta</span>
+                    </div>
+                    <div class="maquina-content">
+                        <h3 class="maquina-title">Pá Carregadeira Volvo L120F</h3>
+                        <p class="maquina-desc">Pá carregadeira de alta performance para carga e descarga. Revisão completa realizada.</p>
+                        <div class="maquina-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Ano:</span>
+                                <span>2018</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Horímetro:</span>
+                                <span>3.100h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Peso:</span>
+                                <span>15.8 ton</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Estado:</span>
+                                <span>Excelente</span>
+                            </div>
+                        </div>
+                        <div class="maquina-price">
+                            R$ 380.000,00
+                            <small>Condições especiais</small>
+                        </div>
+                        <div class="maquina-actions">
+                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Pá Carregadeira Volvo L120F" class="btn-card btn-comprar" target="_blank">Comprar</a>
+                            <button class="btn-card btn-detalhes" onclick="openModal('modal6')">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section class="galeria" id="galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria de Fotos</h2>
+            <p class="section-subtitle">Conheça nossa frota e instalações</p>
+            
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <div style="background: linear-gradient(135deg, #1e5aa8, #2a7dd1); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px;">🚜</div>
+                    <div class="galeria-overlay">
+                        <h3>Escavadeira Hidráulica</h3>
+                        <p>Equipamentos revisados e prontos para uso</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <div style="background: linear-gradient(135deg, #2a7dd1, #1e5aa8); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px;">🚛</div>
+                    <div class="galeria-overlay">
+                        <h3>Caminhões Pesados</h3>
+                        <p>Frota completa para transporte</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <div style="background: linear-gradient(135deg, #0a1a2e, #1e5aa8); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px;">🏗️</div>
+                    <div class="galeria-overlay">
+                        <h3>Retroescavadeiras</h3>
+                        <p>Versatilidade e robustez</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <div style="background: linear-gradient(135deg, #1e5aa8, #0a1a2e); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px;">⚙️</div>
+                    <div class="galeria-overlay">
+                        <h3>Mini Escavadeiras</h3>
+                        <p>Ideal para obras urbanas</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <div style="background: linear-gradient(135deg, #2a7dd1, #0a1a2e); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px;">🚧</div>
+                    <div class="galeria-overlay">
+                        <h3>Tratores de Esteira</h3>
+                        <p>Potência para terraplanagem</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <div style="background: linear-gradient(135deg, #0a1a2e, #2a7dd1); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px;">🏭</div>
+                    <div class="galeria-overlay">
+                        <h3>Pás Carregadeiras</h3>
+                        <p>Alta performance em carga</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="depoimentos">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">O Que Nossos Clientes Dizem</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Depoimentos reais de quem confiou na INOVA PESADOS</p>
+            
+            <div class="depoimentos-grid">
+                <div class="depoimento-card">
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-text">"Comprei uma escavadeira e fiquei impressionado com a qualidade e transparência. Equipamento exatamente como descrito, sem surpresas. Recomendo!"</p>
+                    <p class="depoimento-author">- João Silva, Construtor</p>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-text">"Atendimento excelente desde o primeiro contato. A máquina chegou em perfeito estado e o suporte pós-venda é impecável. Parabéns!"</p>
+                    <p class="depoimento-author">- Maria Santos, Empresária</p>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-text">"Já comprei 3 máquinas aqui. Sempre com qualidade garantida e preços justos. A INOVA PESADOS é minha referência no mercado."</p>
+                    <p class="depoimento-author">- Carlos Oliveira, Engenheiro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Estamos prontos para atender você</p>
+            
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <h3 style="color: var(--azul-escuro); margin-bottom: 2rem;">Informações de Contato</h3>
+                    
+                    <div class="contato-item">
+                        <div class="contato-icon">📞</div>
+                        <div>
+                            <strong>Telefone</strong><br>
+                            <a href="tel:+5527999975540">+55 27 99997-5540</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contato-item">
+                        <div class="contato-icon">💬</div>
+                        <div>
+                            <strong>WhatsApp</strong><br>
+                            <a href="https://wa.me/5527999975540" target="_blank">Fale conosco agora</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contato-item">
+                        <div class="contato-icon">📧</div>
+                        <div>
+                            <strong>E-mail</strong><br>
+                            <a href="mailto:contato@inovapesados.com.br">contato@inovapesados.com.br</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contato-item">
+                        <div class="contato-icon">📍</div>
+                        <div>
+                            <strong>Atendimento</strong><br>
+                            Todo o Brasil
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contato-form">
+                    <h3 style="color: var(--azul-escuro); margin-bottom: 2rem;">Envie sua Mensagem</h3>
+                    <form onsubmit="enviarFormulario(event)">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>INOVA PESADOS</h3>
+                <p>Especialistas em máquinas pesadas seminovas com qualidade garantida e atendimento em todo o Brasil.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">▶️</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Página Principal</a></li>
+                    <li><a href="#maquinas">Máquinas</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li>📞 +55 27 99997-5540</li>
+                    <li>💬 WhatsApp</li>
+                    <li>📧 contato@inovapesados.com.br</li>
+                    <li>📍 Atendimento em todo Brasil</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Horário de Atendimento</h3>
+                <ul>
+                    <li>Segunda a Sexta: 8h às 18h</li>
+                    <li>Sábado: 8h às 12h</li>
+                    <li>Domingo: Fechado</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 INOVA PESADOS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modais de Detalhes -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Escavadeira Hidráulica CAT 320D</h2>
+            <p><strong>Ano:</strong> 2018</p>
+            <p><strong>Horímetro:</strong> 3.500 horas</p>
+            <p><strong>Peso Operacional:</strong> 20.5 toneladas</p>
+            <p><strong>Potência:</strong> 103 kW (138 HP)</p>
+            <p><strong>Capacidade da Caçamba:</strong> 0,8 - 1,2 m³</p>
+            <p><strong>Alcance Máximo:</strong> 9,8 metros</p>
+            <p><strong>Profundidade de Escavação:</strong> 6,4 metros</p>
+            <p><strong>Estado:</strong> Excelente - Revisão completa realizada</p>
+            <p><strong>Documentação:</strong> Tudo em dia</p>
+            <p><strong>Garantia:</strong> 3 meses</p>
+            <p><strong>Valor:</strong> R$ 485.000,00</p>
+            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Retroescavadeira CASE 580M</h2>
+            <p><strong>Ano:</strong> 2019</p>
+            <p><strong>Horímetro:</strong> 2.800 horas</p>
+            <p><strong>Peso Operacional:</strong> 7.8 toneladas</p>
+            <p><strong>Potência:</strong> 67 kW (90 HP)</p>
+            <p><strong>Capacidade da Caçamba:</strong> 0,4 m³</p>
+            <p><strong>Profundidade de Escavação:</strong> 4,6 metros</p>
+            <p><strong>Estado:</strong> Ótimo - Manutenção preventiva em dia</p>
+            <p><strong>Documentação:</strong> Tudo em dia</p>
+            <p><strong>Garantia:</strong> 3 meses</p>
+            <p><strong>Valor:</strong> R$ 320.000,00</p>
+            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Retroescavadeira CASE 580M" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Caminhão Caçamba Scania P310</h2>
+            <p><strong>Ano:</strong> 2017</p>
+            <p><strong>Quilometragem:</strong> 185.000 km</p>
+            <p><strong>Capacidade da Caçamba:</strong> 25 m³</p>
+            <p><strong>Potência:</strong> 231 kW (310 HP)</p>
+            <p><strong>Transmissão:</strong> Manual 8 marchas</p>
+            <p><strong>Estado:</strong> Bom - Motor revisado recentemente</p>
+            <p><strong>Documentação:</strong> Tudo em dia</p>
+            <p><strong>Garantia:</strong> 3 meses</p>
+            <p><strong>Valor:</strong> R$ 285.000,00 (Negociável)</p>
+            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Caminhão Scania P310" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Mini Escavadeira Bobcat E35</h2>
+            <p><strong>Ano:</strong> 2020</p>
+            <p><strong>Horímetro:</strong> 1.200 horas</p>
+            <p><strong>Peso Operacional:</strong> 3.5 toneladas</p>
+            <p><strong>Potência:</strong> 20,5 kW (27,5 HP)</p>
+            <p><strong>Capacidade da Caçamba:</strong> 0,08 - 0,15 m³</p>
+            <p><strong>Profundidade de Escavação:</strong> 3,6 metros</p>
+            <p><strong>Estado:</strong> Excelente - Zero avarias</p>
+            <p><strong>Documentação:</strong> Tudo em dia</p>
+            <p><strong>Garantia:</strong> 6 meses</p>
+            <p><strong>Valor:</strong> R$ 195.000,00</p>
+            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Mini Escavadeira Bobcat E35" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Trator de Esteira CAT D6T</h2>
+            <p><strong>Ano:</strong> 2016</p>
+            <p><strong>Horímetro:</strong> 4.200 horas</p>
+            <p><strong>Peso Operacional:</strong> 18.2 toneladas</p>
+            <p><strong>Potência:</strong> 119 kW (160 HP)</p>
+            <p><strong>Largura da Esteira:</strong> 460 mm</p>
+            <p><strong>Estado:</strong> Ótimo - Equipamento premium</p>
+            <p><strong>Documentação:</strong> Tudo em dia</p>
+            <p><strong>Garantia:</strong> 3 meses</p>
+            <p><strong>Valor:</strong> R$ 420.000,00</p>
+            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Trator de Esteira CAT D6T" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>Pá Carregadeira Volvo L120F</h2>
+            <p><strong>Ano:</strong> 2018</p>
+            <p><strong>Horímetro:</strong> 3.100 horas</p>
+            <p><strong>Peso Operacional:</strong> 15.8 toneladas</p>
+            <p><strong>Potência:</strong> 129 kW (173 HP)</p>
+            <p><strong>Capacidade da Caçamba:</strong> 2,0 - 3,5 m³</p>
+            <p><strong>Estado:</strong> Excelente - Revisão completa realizada</p>
+            <p><strong>Documentação:</strong> Tudo em dia</p>
+            <p><strong>Garantia:</strong> 3 meses</p>
+            <p><strong>Valor:</strong> R$ 380.000,00</p>
+            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Pá Carregadeira Volvo L120F" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Form submission
+        function enviarFormulario(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            const texto = `Olá! Meu nome é ${nome}. Telefone: ${telefone}. E-mail: ${email}. Mensagem: ${mensagem}`;
+            const url = `https://wa.me/5527999975540?text=${encodeURIComponent(texto)}`;
+            
+            window.open(url, '_blank');
+            
+            // Reset form
+            event.target.reset();
+            alert('Redirecionando para o WhatsApp...');
+        }
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.maquina-card, .depoimento-card, .galeria-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
