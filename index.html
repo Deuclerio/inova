@@ -120,6 +120,27 @@
             transform: scale(1.05);
         }
 
+        .frete-btn {
+            background: var(--azul-vibrante);
+            color: var(--branco);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .frete-btn:hover {
+            transform: scale(1.05);
+            background: var(--azul-escuro);
+        }
+
         /* Language Selector */
         .language-selector {
             display: flex;
@@ -707,6 +728,21 @@
             .maquinas-grid {
                 grid-template-columns: 1fr;
             }
+
+            .frete-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .whatsapp-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -1212,7 +1248,10 @@
             <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
             <p><strong data-i18n="modal.value">Valor:</strong> R$ 485.000,00</p>
             <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-primary" target="_blank" style="flex: 1; min-width: 200px; text-align: center;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+                <button onclick="closeModal('modal1'); openModal('modalFrete');" class="btn-primary" style="flex: 1; min-width: 200px; background: var(--azul-vibrante);" data-i18n="frete.btn">🚚 Calcular Frete</button>
+            </div>
         </div>
     </div>
 
@@ -1231,7 +1270,10 @@
             <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
             <p><strong data-i18n="modal.value">Valor:</strong> R$ 320.000,00</p>
             <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Retroescavadeira CASE 580M" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Retroescavadeira CASE 580M" class="btn-primary" target="_blank" style="flex: 1; min-width: 200px; text-align: center;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+                <button onclick="closeModal('modal2'); openModal('modalFrete');" class="btn-primary" style="flex: 1; min-width: 200px; background: var(--azul-vibrante);" data-i18n="frete.btn">🚚 Calcular Frete</button>
+            </div>
         </div>
     </div>
 
@@ -1249,7 +1291,10 @@
             <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
             <p><strong data-i18n="modal.value">Valor:</strong> R$ 285.000,00 (<span data-i18n="price.negotiable">Negociável</span>)</p>
             <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Caminhão Scania P310" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Caminhão Scania P310" class="btn-primary" target="_blank" style="flex: 1; min-width: 200px; text-align: center;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+                <button onclick="closeModal('modal3'); openModal('modalFrete');" class="btn-primary" style="flex: 1; min-width: 200px; background: var(--azul-vibrante);" data-i18n="frete.btn">🚚 Calcular Frete</button>
+            </div>
         </div>
     </div>
 
@@ -1268,7 +1313,10 @@
             <p><strong data-i18n="modal.warranty">Garantia:</strong> 6 <span data-i18n="modal.months">meses</span></p>
             <p><strong data-i18n="modal.value">Valor:</strong> R$ 195.000,00</p>
             <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Mini Escavadeira Bobcat E35" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Mini Escavadeira Bobcat E35" class="btn-primary" target="_blank" style="flex: 1; min-width: 200px; text-align: center;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+                <button onclick="closeModal('modal4'); openModal('modalFrete');" class="btn-primary" style="flex: 1; min-width: 200px; background: var(--azul-vibrante);" data-i18n="frete.btn">🚚 Calcular Frete</button>
+            </div>
         </div>
     </div>
 
@@ -1286,7 +1334,10 @@
             <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
             <p><strong data-i18n="modal.value">Valor:</strong> R$ 420.000,00</p>
             <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Trator de Esteira CAT D6T" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Trator de Esteira CAT D6T" class="btn-primary" target="_blank" style="flex: 1; min-width: 200px; text-align: center;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+                <button onclick="closeModal('modal5'); openModal('modalFrete');" class="btn-primary" style="flex: 1; min-width: 200px; background: var(--azul-vibrante);" data-i18n="frete.btn">🚚 Calcular Frete</button>
+            </div>
         </div>
     </div>
 
@@ -1304,7 +1355,71 @@
             <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
             <p><strong data-i18n="modal.value">Valor:</strong> R$ 380.000,00</p>
             <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Pá Carregadeira Volvo L120F" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Pá Carregadeira Volvo L120F" class="btn-primary" target="_blank" style="flex: 1; min-width: 200px; text-align: center;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
+                <button onclick="closeModal('modal6'); openModal('modalFrete');" class="btn-primary" style="flex: 1; min-width: 200px; background: var(--azul-vibrante);" data-i18n="frete.btn">🚚 Calcular Frete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Calcular Frete -->
+    <div id="modalFrete" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalFrete')">&times;</span>
+            <h2 data-i18n="frete.title">Calcular Frete</h2>
+            
+            <!-- Seleção de método -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--cinza-claro);">
+                <button id="btnCep" onclick="selecionarMetodo('cep')" style="flex: 1; padding: 1rem; border: none; background: var(--azul-vibrante); color: var(--branco); border-radius: 8px 8px 0 0; cursor: pointer; font-weight: bold; transition: all 0.3s;" data-i18n="frete.byCep">Por CEP</button>
+                <button id="btnKm" onclick="selecionarMetodo('km')" style="flex: 1; padding: 1rem; border: none; background: var(--cinza-claro); color: var(--cinza-escuro); border-radius: 8px 8px 0 0; cursor: pointer; font-weight: bold; transition: all 0.3s;" data-i18n="frete.byKm">Por Distância (km)</button>
+            </div>
+            
+            <!-- Formulário por CEP -->
+            <div id="formCep" style="display: block;">
+                <p style="margin-bottom: 1.5rem; color: var(--cinza-escuro);" data-i18n="frete.cepDescription">Informe os CEPs de origem e destino para calcular o frete.</p>
+                
+                <div class="form-group">
+                    <label for="cepOrigem" data-i18n="frete.cepOrigin">CEP de Origem:</label>
+                    <input type="text" id="cepOrigem" name="cepOrigem" placeholder="00000-000" maxlength="9" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;" onkeyup="formatarCEP(this)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cepDestino" data-i18n="frete.cepDestiny">CEP de Destino:</label>
+                    <input type="text" id="cepDestino" name="cepDestino" placeholder="00000-000" maxlength="9" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;" onkeyup="formatarCEP(this)">
+                </div>
+                
+                <div class="form-group" style="display: none;" id="distanciaCalculada">
+                    <label data-i18n="frete.calculatedDistance">Distância Calculada:</label>
+                    <input type="text" id="distanciaCep" readonly style="width: 100%; padding: 0.8rem; border: 2px solid var(--verde); border-radius: 8px; font-size: 1rem; background: var(--cinza-claro); font-weight: bold;">
+                </div>
+                
+                <button onclick="calcularFretePorCEP()" class="btn-primary" style="width: 100%; margin-bottom: 1rem;" data-i18n="frete.calculate">Calcular</button>
+            </div>
+            
+            <!-- Formulário por Distância -->
+            <div id="formKm" style="display: none;">
+                <p style="margin-bottom: 1.5rem; color: var(--cinza-escuro);" data-i18n="frete.kmDescription">Informe a distância em quilômetros para calcular o valor do frete (ida e volta).</p>
+                
+                <div class="form-group">
+                    <label for="distancia" data-i18n="frete.distance">Distância (km):</label>
+                    <input type="number" id="distancia" name="distancia" min="1" step="0.1" placeholder="Ex: 100" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+                
+                <button onclick="calcularFretePorKm()" class="btn-primary" style="width: 100%; margin-bottom: 1rem;" data-i18n="frete.calculate">Calcular</button>
+            </div>
+            
+            <!-- Informações de cálculo -->
+            <div style="background: var(--cinza-claro); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                <p style="margin-bottom: 0.5rem;"><strong data-i18n="frete.rate">Taxa por km:</strong> R$ 15,00</p>
+                <p style="margin-bottom: 0.5rem;"><strong data-i18n="frete.roundTrip">Ida e volta:</strong> × 2</p>
+                <p style="margin-bottom: 0.5rem;"><strong data-i18n="frete.totalRate">Valor total por km:</strong> R$ 30,00</p>
+            </div>
+            
+            <!-- Resultado -->
+            <div id="resultadoFrete" style="display: none; background: var(--verde); color: var(--branco); padding: 1.5rem; border-radius: 10px; text-align: center; margin-top: 1rem;">
+                <h3 style="color: var(--branco); margin-bottom: 0.5rem;" data-i18n="frete.result">Valor do Frete:</h3>
+                <p style="font-size: 2rem; font-weight: bold; margin: 0;" id="valorFrete"></p>
+            </div>
         </div>
     </div>
 
@@ -1400,6 +1515,23 @@
                     months: "meses",
                     paymentDesc: "À vista com desconto ou financiamento em até 60x",
                     whatsappBtn: "Falar no WhatsApp"
+                },
+                frete: {
+                    btn: "🚚 Calcular Frete",
+                    title: "Calcular Frete",
+                    byCep: "Por CEP",
+                    byKm: "Por Distância (km)",
+                    cepDescription: "Informe os CEPs de origem e destino para calcular o frete.",
+                    kmDescription: "Informe a distância em quilômetros para calcular o valor do frete (ida e volta).",
+                    cepOrigin: "CEP de Origem:",
+                    cepDestiny: "CEP de Destino:",
+                    calculatedDistance: "Distância Calculada:",
+                    distance: "Distância (km):",
+                    rate: "Taxa por km:",
+                    roundTrip: "Ida e volta:",
+                    totalRate: "Valor total por km:",
+                    calculate: "Calcular",
+                    result: "Valor do Frete:"
                 }
             },
             en: {
@@ -1491,6 +1623,23 @@
                     months: "months",
                     paymentDesc: "Cash with discount or financing up to 60 installments",
                     whatsappBtn: "Talk on WhatsApp"
+                },
+                frete: {
+                    btn: "🚚 Calculate Freight",
+                    title: "Calculate Freight",
+                    byCep: "By ZIP Code",
+                    byKm: "By Distance (km)",
+                    cepDescription: "Enter the origin and destination ZIP codes to calculate freight.",
+                    kmDescription: "Enter the distance in kilometers to calculate the freight value (round trip).",
+                    cepOrigin: "Origin ZIP Code:",
+                    cepDestiny: "Destination ZIP Code:",
+                    calculatedDistance: "Calculated Distance:",
+                    distance: "Distance (km):",
+                    rate: "Rate per km:",
+                    roundTrip: "Round trip:",
+                    totalRate: "Total value per km:",
+                    calculate: "Calculate",
+                    result: "Freight Value:"
                 }
             }
         };
@@ -1580,6 +1729,141 @@
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
             }
+        }
+
+        // Selecionar método de cálculo
+        function selecionarMetodo(metodo) {
+            const btnCep = document.getElementById('btnCep');
+            const btnKm = document.getElementById('btnKm');
+            const formCep = document.getElementById('formCep');
+            const formKm = document.getElementById('formKm');
+            const resultadoDiv = document.getElementById('resultadoFrete');
+            
+            // Reset resultado
+            resultadoDiv.style.display = 'none';
+            
+            if (metodo === 'cep') {
+                btnCep.style.background = 'var(--azul-vibrante)';
+                btnCep.style.color = 'var(--branco)';
+                btnKm.style.background = 'var(--cinza-claro)';
+                btnKm.style.color = 'var(--cinza-escuro)';
+                formCep.style.display = 'block';
+                formKm.style.display = 'none';
+            } else {
+                btnKm.style.background = 'var(--azul-vibrante)';
+                btnKm.style.color = 'var(--branco)';
+                btnCep.style.background = 'var(--cinza-claro)';
+                btnCep.style.color = 'var(--cinza-escuro)';
+                formKm.style.display = 'block';
+                formCep.style.display = 'none';
+            }
+        }
+
+        // Formatar CEP
+        function formatarCEP(input) {
+            let valor = input.value.replace(/\D/g, '');
+            if (valor.length > 5) {
+                valor = valor.substring(0, 5) + '-' + valor.substring(5, 8);
+            }
+            input.value = valor;
+        }
+
+        // Calcular frete por CEP
+        function calcularFretePorCEP() {
+            const cepOrigem = document.getElementById('cepOrigem').value.replace(/\D/g, '');
+            const cepDestino = document.getElementById('cepDestino').value.replace(/\D/g, '');
+            const resultadoDiv = document.getElementById('resultadoFrete');
+            const valorFrete = document.getElementById('valorFrete');
+            const distanciaDiv = document.getElementById('distanciaCalculada');
+            const distanciaInput = document.getElementById('distanciaCep');
+            
+            if (!cepOrigem || cepOrigem.length !== 8) {
+                alert(currentLang === 'pt' ? 'Por favor, informe um CEP de origem válido.' : 'Please enter a valid origin CEP.');
+                return;
+            }
+            
+            if (!cepDestino || cepDestino.length !== 8) {
+                alert(currentLang === 'pt' ? 'Por favor, informe um CEP de destino válido.' : 'Please enter a valid destination CEP.');
+                return;
+            }
+            
+            // Simulação de cálculo de distância (em produção, usar API de geolocalização)
+            // Por enquanto, vamos usar uma estimativa baseada na diferença dos CEPs
+            // NOTA: Esta é uma estimativa simplificada. Em produção, use uma API como ViaCEP + Google Maps Distance Matrix
+            
+            const distanciaEstimada = calcularDistanciaEstimada(cepOrigem, cepDestino);
+            distanciaInput.value = distanciaEstimada.toFixed(1) + ' km';
+            distanciaDiv.style.display = 'block';
+            
+            // Cálculo: R$ 15,00 por km × 2 (ida e volta) = R$ 30,00 por km
+            const valorPorKm = 15.00;
+            const multiplicador = 2;
+            const valorTotal = distanciaEstimada * valorPorKm * multiplicador;
+            
+            valorFrete.textContent = `R$ ${valorTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            resultadoDiv.style.display = 'block';
+            
+            // Scroll to result
+            resultadoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Calcular distância estimada entre CEPs (simplificado)
+        function calcularDistanciaEstimada(cep1, cep2) {
+            // NOTA: Esta é uma estimativa simplificada para demonstração
+            // Em produção, recomenda-se usar uma API real como:
+            // - Google Maps Distance Matrix API
+            // - ViaCEP + cálculo de distância geográfica
+            // - API de correios ou similar
+            
+            const cep1Num = parseInt(cep1);
+            const cep2Num = parseInt(cep2);
+            const diferenca = Math.abs(cep1Num - cep2Num);
+            
+            // Estimativa baseada na diferença dos CEPs
+            // CEPs próximos (mesma região): diferença pequena
+            // CEPs distantes (estados diferentes): diferença grande
+            
+            let distancia;
+            
+            if (diferenca < 1000) {
+                // Mesma cidade/região: 5-50 km
+                distancia = 5 + (diferenca / 100);
+            } else if (diferenca < 10000) {
+                // Mesmo estado: 50-500 km
+                distancia = 50 + (diferenca / 20);
+            } else if (diferenca < 100000) {
+                // Estados próximos: 500-2000 km
+                distancia = 500 + (diferenca / 50);
+            } else {
+                // Estados distantes: 2000-5000 km
+                distancia = 2000 + (diferenca / 200);
+            }
+            
+            // Limites: mínimo 5 km, máximo 5000 km
+            return Math.max(5, Math.min(5000, Math.round(distancia)));
+        }
+
+        // Calcular frete por distância
+        function calcularFretePorKm() {
+            const distancia = parseFloat(document.getElementById('distancia').value);
+            const resultadoDiv = document.getElementById('resultadoFrete');
+            const valorFrete = document.getElementById('valorFrete');
+            
+            if (!distancia || distancia <= 0) {
+                alert(currentLang === 'pt' ? 'Por favor, informe uma distância válida.' : 'Please enter a valid distance.');
+                return;
+            }
+            
+            // Cálculo: R$ 15,00 por km × 2 (ida e volta) = R$ 30,00 por km
+            const valorPorKm = 15.00;
+            const multiplicador = 2;
+            const valorTotal = distancia * valorPorKm * multiplicador;
+            
+            valorFrete.textContent = `R$ ${valorTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            resultadoDiv.style.display = 'block';
+            
+            // Scroll to result
+            resultadoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // Form submission
