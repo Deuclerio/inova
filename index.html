@@ -120,6 +120,35 @@
             transform: scale(1.05);
         }
 
+        /* Language Selector */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .language-btn {
+            background: rgba(255,255,255,0.1);
+            color: var(--branco);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .language-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--azul-claro);
+        }
+
+        .language-btn.active {
+            background: var(--azul-vibrante);
+            border-color: var(--azul-vibrante);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-vibrante) 100%);
@@ -694,25 +723,31 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#maquinas">Máquinas</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
+                    <li><a href="#maquinas" data-i18n="nav.machines">Máquinas</a></li>
+                    <li><a href="#galeria" data-i18n="nav.gallery">Galeria</a></li>
+                    <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
                 </ul>
             </nav>
-            <a href="https://wa.me/5527999975540" class="whatsapp-btn" target="_blank">
-                📱 WhatsApp
-            </a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="language-selector">
+                    <button class="language-btn active" onclick="changeLanguage('pt')" id="lang-pt">PT</button>
+                    <button class="language-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+                </div>
+                <a href="https://wa.me/5527999975540" class="whatsapp-btn" target="_blank" data-i18n="whatsapp">
+                    📱 WhatsApp
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <h2>Potencializando suas Conquistas</h2>
-        <p>Máquinas pesadas de qualidade para transformar seus projetos</p>
+        <h2 data-i18n="hero.title">Potencializando suas Conquistas</h2>
+        <p data-i18n="hero.subtitle">Máquinas pesadas de qualidade para transformar seus projetos</p>
         <div class="hero-buttons">
-            <a href="#maquinas" class="btn-primary">Ver Máquinas</a>
-            <a href="#contato" class="btn-secondary">Fale Conosco</a>
+            <a href="#maquinas" class="btn-primary" data-i18n="hero.btnMachines">Ver Máquinas</a>
+            <a href="#contato" class="btn-secondary" data-i18n="hero.btnContact">Fale Conosco</a>
         </div>
     </section>
 
@@ -720,62 +755,62 @@
     <section class="stats">
         <div class="stat-item">
             <span class="stat-number">500+</span>
-            <span class="stat-label">Máquinas Vendidas</span>
+            <span class="stat-label" data-i18n="stats.machinesSold">Máquinas Vendidas</span>
         </div>
         <div class="stat-item">
             <span class="stat-number">100%</span>
-            <span class="stat-label">Vistoriadas</span>
+            <span class="stat-label" data-i18n="stats.inspected">Vistoriadas</span>
         </div>
         <div class="stat-item">
             <span class="stat-number">5+</span>
-            <span class="stat-label">Estados Atendidos</span>
+            <span class="stat-label" data-i18n="stats.states">Estados Atendidos</span>
         </div>
         <div class="stat-item">
             <span class="stat-number">1000+</span>
-            <span class="stat-label">Clientes Satisfeitos</span>
+            <span class="stat-label" data-i18n="stats.clients">Clientes Satisfeitos</span>
         </div>
     </section>
 
     <!-- Máquinas Section -->
     <section class="maquinas" id="maquinas">
         <div class="container">
-            <h2 class="section-title">Nossas Máquinas</h2>
-            <p class="section-subtitle">Equipamentos seminovos com qualidade garantida e procedência comprovada</p>
+            <h2 class="section-title" data-i18n="machines.title">Nossas Máquinas</h2>
+            <p class="section-subtitle" data-i18n="machines.subtitle">Equipamentos seminovos com qualidade garantida e procedência comprovada</p>
             
             <div class="maquinas-grid">
                 <!-- Máquina 1 -->
                 <div class="maquina-card">
                     <div class="maquina-image">
-                        <span class="maquina-badge">Destaque</span>
+                        <span class="maquina-badge" data-i18n="badge.featured">Destaque</span>
                     </div>
                     <div class="maquina-content">
                         <h3 class="maquina-title">Escavadeira Hidráulica CAT 320D</h3>
                         <p class="maquina-desc">Escavadeira de alto desempenho, ideal para obras de grande porte. Equipamento revisado e em excelente estado.</p>
                         <div class="maquina-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Ano:</span>
+                                <span class="spec-label" data-i18n="spec.year">Ano:</span>
                                 <span>2018</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Horímetro:</span>
+                                <span class="spec-label" data-i18n="spec.hours">Horímetro:</span>
                                 <span>3.500h</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Peso:</span>
+                                <span class="spec-label" data-i18n="spec.weight">Peso:</span>
                                 <span>20.5 ton</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Estado:</span>
-                                <span>Excelente</span>
+                                <span class="spec-label" data-i18n="spec.condition">Estado:</span>
+                                <span data-i18n="condition.excellent">Excelente</span>
                             </div>
                         </div>
                         <div class="maquina-price">
                             R$ 485.000,00
-                            <small>Financiamento disponível</small>
+                            <small data-i18n="price.financing">Financiamento disponível</small>
                         </div>
                         <div class="maquina-actions">
-                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-card btn-comprar" target="_blank">Comprar</a>
-                            <button class="btn-card btn-detalhes" onclick="openModal('modal1')">Detalhes</button>
+                            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-card btn-comprar" target="_blank" data-i18n="btn.buy">Comprar</a>
+                            <button class="btn-card btn-detalhes" onclick="openModal('modal1')" data-i18n="btn.details">Detalhes</button>
                         </div>
                     </div>
                 </div>
@@ -783,32 +818,32 @@
                 <!-- Máquina 2 -->
                 <div class="maquina-card">
                     <div class="maquina-image">
-                        <span class="maquina-badge">Novo</span>
+                        <span class="maquina-badge" data-i18n="badge.new">Novo</span>
                     </div>
                     <div class="maquina-content">
                         <h3 class="maquina-title">Retroescavadeira CASE 580M</h3>
                         <p class="maquina-desc">Versátil e robusta, perfeita para construção civil e obras diversas. Manutenção em dia.</p>
                         <div class="maquina-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Ano:</span>
+                                <span class="spec-label" data-i18n="spec.year">Ano:</span>
                                 <span>2019</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Horímetro:</span>
+                                <span class="spec-label" data-i18n="spec.hours">Horímetro:</span>
                                 <span>2.800h</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Peso:</span>
+                                <span class="spec-label" data-i18n="spec.weight">Peso:</span>
                                 <span>7.8 ton</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Estado:</span>
-                                <span>Ótimo</span>
+                                <span class="spec-label" data-i18n="spec.condition">Estado:</span>
+                                <span data-i18n="condition.good">Ótimo</span>
                             </div>
                         </div>
                         <div class="maquina-price">
                             R$ 320.000,00
-                            <small>Condições especiais</small>
+                            <small data-i18n="price.special">Condições especiais</small>
                         </div>
                         <div class="maquina-actions">
                             <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Retroescavadeira CASE 580M" class="btn-card btn-comprar" target="_blank">Comprar</a>
@@ -820,32 +855,32 @@
                 <!-- Máquina 3 -->
                 <div class="maquina-card">
                     <div class="maquina-image">
-                        <span class="maquina-badge">Oferta</span>
+                        <span class="maquina-badge" data-i18n="badge.offer">Oferta</span>
                     </div>
                     <div class="maquina-content">
                         <h3 class="maquina-title">Caminhão Caçamba Scania P310</h3>
                         <p class="maquina-desc">Caminhão robusto para transporte pesado. Motor revisado e documentação em dia.</p>
                         <div class="maquina-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Ano:</span>
+                                <span class="spec-label" data-i18n="spec.year">Ano:</span>
                                 <span>2017</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">KM:</span>
+                                <span class="spec-label" data-i18n="modal.km">KM:</span>
                                 <span>185.000 km</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Capacidade:</span>
+                                <span class="spec-label" data-i18n="modal.bucket">Capacidade:</span>
                                 <span>25 m³</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Estado:</span>
-                                <span>Bom</span>
+                                <span class="spec-label" data-i18n="spec.condition">Estado:</span>
+                                <span data-i18n="condition.fair">Bom</span>
                             </div>
                         </div>
                         <div class="maquina-price">
                             R$ 285.000,00
-                            <small>Negociável</small>
+                            <small data-i18n="price.negotiable">Negociável</small>
                         </div>
                         <div class="maquina-actions">
                             <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Caminhão Scania P310" class="btn-card btn-comprar" target="_blank">Comprar</a>
@@ -857,32 +892,32 @@
                 <!-- Máquina 4 -->
                 <div class="maquina-card">
                     <div class="maquina-image">
-                        <span class="maquina-badge">Destaque</span>
+                        <span class="maquina-badge" data-i18n="badge.featured">Destaque</span>
                     </div>
                     <div class="maquina-content">
                         <h3 class="maquina-title">Mini Escavadeira Bobcat E35</h3>
                         <p class="maquina-desc">Compacta e eficiente, ideal para obras urbanas e espaços reduzidos. Zero avarias.</p>
                         <div class="maquina-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Ano:</span>
+                                <span class="spec-label" data-i18n="spec.year">Ano:</span>
                                 <span>2020</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Horímetro:</span>
+                                <span class="spec-label" data-i18n="spec.hours">Horímetro:</span>
                                 <span>1.200h</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Peso:</span>
+                                <span class="spec-label" data-i18n="spec.weight">Peso:</span>
                                 <span>3.5 ton</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Estado:</span>
-                                <span>Excelente</span>
+                                <span class="spec-label" data-i18n="spec.condition">Estado:</span>
+                                <span data-i18n="condition.excellent">Excelente</span>
                             </div>
                         </div>
                         <div class="maquina-price">
                             R$ 195.000,00
-                            <small>Melhor preço</small>
+                            <small data-i18n="price.best">Melhor preço</small>
                         </div>
                         <div class="maquina-actions">
                             <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Mini Escavadeira Bobcat E35" class="btn-card btn-comprar" target="_blank">Comprar</a>
@@ -894,32 +929,32 @@
                 <!-- Máquina 5 -->
                 <div class="maquina-card">
                     <div class="maquina-image">
-                        <span class="maquina-badge">Novo</span>
+                        <span class="maquina-badge" data-i18n="badge.new">Novo</span>
                     </div>
                     <div class="maquina-content">
                         <h3 class="maquina-title">Trator de Esteira CAT D6T</h3>
                         <p class="maquina-desc">Trator de esteira para terraplanagem e movimentação de terra. Equipamento premium.</p>
                         <div class="maquina-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Ano:</span>
+                                <span class="spec-label" data-i18n="spec.year">Ano:</span>
                                 <span>2016</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Horímetro:</span>
+                                <span class="spec-label" data-i18n="spec.hours">Horímetro:</span>
                                 <span>4.200h</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Peso:</span>
+                                <span class="spec-label" data-i18n="spec.weight">Peso:</span>
                                 <span>18.2 ton</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Estado:</span>
-                                <span>Ótimo</span>
+                                <span class="spec-label" data-i18n="spec.condition">Estado:</span>
+                                <span data-i18n="condition.good">Ótimo</span>
                             </div>
                         </div>
                         <div class="maquina-price">
                             R$ 420.000,00
-                            <small>Financiamento disponível</small>
+                            <small data-i18n="price.financing">Financiamento disponível</small>
                         </div>
                         <div class="maquina-actions">
                             <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Trator de Esteira CAT D6T" class="btn-card btn-comprar" target="_blank">Comprar</a>
@@ -931,32 +966,32 @@
                 <!-- Máquina 6 -->
                 <div class="maquina-card">
                     <div class="maquina-image">
-                        <span class="maquina-badge">Oferta</span>
+                        <span class="maquina-badge" data-i18n="badge.offer">Oferta</span>
                     </div>
                     <div class="maquina-content">
                         <h3 class="maquina-title">Pá Carregadeira Volvo L120F</h3>
                         <p class="maquina-desc">Pá carregadeira de alta performance para carga e descarga. Revisão completa realizada.</p>
                         <div class="maquina-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Ano:</span>
+                                <span class="spec-label" data-i18n="spec.year">Ano:</span>
                                 <span>2018</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Horímetro:</span>
+                                <span class="spec-label" data-i18n="spec.hours">Horímetro:</span>
                                 <span>3.100h</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Peso:</span>
+                                <span class="spec-label" data-i18n="spec.weight">Peso:</span>
                                 <span>15.8 ton</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Estado:</span>
-                                <span>Excelente</span>
+                                <span class="spec-label" data-i18n="spec.condition">Estado:</span>
+                                <span data-i18n="condition.excellent">Excelente</span>
                             </div>
                         </div>
                         <div class="maquina-price">
                             R$ 380.000,00
-                            <small>Condições especiais</small>
+                            <small data-i18n="price.special">Condições especiais</small>
                         </div>
                         <div class="maquina-actions">
                             <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Pá Carregadeira Volvo L120F" class="btn-card btn-comprar" target="_blank">Comprar</a>
@@ -971,8 +1006,8 @@
     <!-- Galeria Section -->
     <section class="galeria" id="galeria">
         <div class="container">
-            <h2 class="section-title">Galeria de Fotos</h2>
-            <p class="section-subtitle">Conheça nossa frota e instalações</p>
+            <h2 class="section-title" data-i18n="gallery.title">Galeria de Fotos</h2>
+            <p class="section-subtitle" data-i18n="gallery.subtitle">Conheça nossa frota e instalações</p>
             
             <div class="galeria-grid">
                 <div class="galeria-item">
@@ -1024,8 +1059,8 @@
     <!-- Depoimentos -->
     <section class="depoimentos">
         <div class="container">
-            <h2 class="section-title" style="color: white;">O Que Nossos Clientes Dizem</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Depoimentos reais de quem confiou na INOVA PESADOS</p>
+            <h2 class="section-title" style="color: white;" data-i18n="testimonials.title">O Que Nossos Clientes Dizem</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);" data-i18n="testimonials.subtitle">Depoimentos reais de quem confiou na INOVA PESADOS</p>
             
             <div class="depoimentos-grid">
                 <div class="depoimento-card">
@@ -1050,17 +1085,17 @@
     <!-- Contato -->
     <section class="contato" id="contato">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p class="section-subtitle">Estamos prontos para atender você</p>
+            <h2 class="section-title" data-i18n="contact.title">Entre em Contato</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Estamos prontos para atender você</p>
             
             <div class="contato-grid">
                 <div class="contato-info">
-                    <h3 style="color: var(--azul-escuro); margin-bottom: 2rem;">Informações de Contato</h3>
+                    <h3 style="color: var(--azul-escuro); margin-bottom: 2rem;" data-i18n="contact.infoTitle">Informações de Contato</h3>
                     
                     <div class="contato-item">
                         <div class="contato-icon">📞</div>
                         <div>
-                            <strong>Telefone</strong><br>
+                            <strong data-i18n="contact.phone">Telefone</strong><br>
                             <a href="tel:+5527999975540">+55 27 99997-5540</a>
                         </div>
                     </div>
@@ -1068,15 +1103,15 @@
                     <div class="contato-item">
                         <div class="contato-icon">💬</div>
                         <div>
-                            <strong>WhatsApp</strong><br>
-                            <a href="https://wa.me/5527999975540" target="_blank">Fale conosco agora</a>
+                            <strong data-i18n="contact.whatsapp">WhatsApp</strong><br>
+                            <a href="https://wa.me/5527999975540" target="_blank" data-i18n="contact.whatsappLink">Fale conosco agora</a>
                         </div>
                     </div>
                     
                     <div class="contato-item">
                         <div class="contato-icon">📧</div>
                         <div>
-                            <strong>E-mail</strong><br>
+                            <strong data-i18n="contact.email">E-mail</strong><br>
                             <a href="mailto:contato@inovapesados.com.br">contato@inovapesados.com.br</a>
                         </div>
                     </div>
@@ -1084,32 +1119,32 @@
                     <div class="contato-item">
                         <div class="contato-icon">📍</div>
                         <div>
-                            <strong>Atendimento</strong><br>
-                            Todo o Brasil
+                            <strong data-i18n="contact.service">Atendimento</strong><br>
+                            <span data-i18n="contact.serviceArea">Todo o Brasil</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contato-form">
-                    <h3 style="color: var(--azul-escuro); margin-bottom: 2rem;">Envie sua Mensagem</h3>
+                    <h3 style="color: var(--azul-escuro); margin-bottom: 2rem;" data-i18n="contact.formTitle">Envie sua Mensagem</h3>
                     <form onsubmit="enviarFormulario(event)">
                         <div class="form-group">
-                            <label for="nome">Nome Completo</label>
+                            <label for="nome" data-i18n="form.name">Nome Completo</label>
                             <input type="text" id="nome" name="nome" required>
                         </div>
                         <div class="form-group">
-                            <label for="telefone">Telefone</label>
+                            <label for="telefone" data-i18n="form.phone">Telefone</label>
                             <input type="tel" id="telefone" name="telefone" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">E-mail</label>
+                            <label for="email" data-i18n="form.email">E-mail</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="mensagem">Mensagem</label>
+                            <label for="mensagem" data-i18n="form.message">Mensagem</label>
                             <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Enviar Mensagem</button>
+                        <button type="submit" class="btn-primary" style="width: 100%;" data-i18n="form.submit">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>
@@ -1121,7 +1156,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>INOVA PESADOS</h3>
-                <p>Especialistas em máquinas pesadas seminovas com qualidade garantida e atendimento em todo o Brasil.</p>
+                <p data-i18n="footer.description">Especialistas em máquinas pesadas seminovas com qualidade garantida e atendimento em todo o Brasil.</p>
                 <div class="social-links">
                     <a href="#" class="social-link">📘</a>
                     <a href="#" class="social-link">📷</a>
@@ -1129,34 +1164,34 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Links Rápidos</h3>
+                <h3 data-i18n="footer.quickLinks">Links Rápidos</h3>
                 <ul>
-                    <li><a href="#inicio">Página Principal</a></li>
-                    <li><a href="#maquinas">Máquinas</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#inicio" data-i18n="footer.mainPage">Página Principal</a></li>
+                    <li><a href="#maquinas" data-i18n="footer.machines">Máquinas</a></li>
+                    <li><a href="#galeria" data-i18n="footer.gallery">Galeria</a></li>
+                    <li><a href="#contato" data-i18n="footer.contact">Contato</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contato</h3>
+                <h3 data-i18n="contact.title">Contato</h3>
                 <ul>
                     <li>📞 +55 27 99997-5540</li>
                     <li>💬 WhatsApp</li>
                     <li>📧 contato@inovapesados.com.br</li>
-                    <li>📍 Atendimento em todo Brasil</li>
+                    <li>📍 <span data-i18n="contact.serviceArea">Atendimento em todo Brasil</span></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Horário de Atendimento</h3>
+                <h3 data-i18n="footer.schedule">Horário de Atendimento</h3>
                 <ul>
-                    <li>Segunda a Sexta: 8h às 18h</li>
-                    <li>Sábado: 8h às 12h</li>
-                    <li>Domingo: Fechado</li>
+                    <li data-i18n="footer.weekdays">Segunda a Sexta: 8h às 18h</li>
+                    <li data-i18n="footer.saturday">Sábado: 8h às 12h</li>
+                    <li data-i18n="footer.sunday">Domingo: Fechado</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 INOVA PESADOS. Todos os direitos reservados.</p>
+            <p>&copy; 2024 INOVA PESADOS. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
         </div>
     </footer>
 
@@ -1165,19 +1200,19 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal1')">&times;</span>
             <h2>Escavadeira Hidráulica CAT 320D</h2>
-            <p><strong>Ano:</strong> 2018</p>
-            <p><strong>Horímetro:</strong> 3.500 horas</p>
-            <p><strong>Peso Operacional:</strong> 20.5 toneladas</p>
-            <p><strong>Potência:</strong> 103 kW (138 HP)</p>
-            <p><strong>Capacidade da Caçamba:</strong> 0,8 - 1,2 m³</p>
-            <p><strong>Alcance Máximo:</strong> 9,8 metros</p>
-            <p><strong>Profundidade de Escavação:</strong> 6,4 metros</p>
-            <p><strong>Estado:</strong> Excelente - Revisão completa realizada</p>
-            <p><strong>Documentação:</strong> Tudo em dia</p>
-            <p><strong>Garantia:</strong> 3 meses</p>
-            <p><strong>Valor:</strong> R$ 485.000,00</p>
-            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+            <p><strong data-i18n="modal.year">Ano:</strong> 2018</p>
+            <p><strong data-i18n="modal.hours">Horímetro:</strong> 3.500 horas</p>
+            <p><strong data-i18n="modal.weight">Peso Operacional:</strong> 20.5 toneladas</p>
+            <p><strong data-i18n="modal.power">Potência:</strong> 103 kW (138 HP)</p>
+            <p><strong data-i18n="modal.bucket">Capacidade da Caçamba:</strong> 0,8 - 1,2 m³</p>
+            <p><strong data-i18n="modal.reach">Alcance Máximo:</strong> 9,8 metros</p>
+            <p><strong data-i18n="modal.depth">Profundidade de Escavação:</strong> 6,4 metros</p>
+            <p><strong data-i18n="modal.condition">Estado:</strong> <span data-i18n="modal.excellent">Excelente - Revisão completa realizada</span></p>
+            <p><strong data-i18n="modal.documentation">Documentação:</strong> <span data-i18n="modal.allGood">Tudo em dia</span></p>
+            <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
+            <p><strong data-i18n="modal.value">Valor:</strong> R$ 485.000,00</p>
+            <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Escavadeira CAT 320D" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
         </div>
     </div>
 
@@ -1185,18 +1220,18 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal2')">&times;</span>
             <h2>Retroescavadeira CASE 580M</h2>
-            <p><strong>Ano:</strong> 2019</p>
-            <p><strong>Horímetro:</strong> 2.800 horas</p>
-            <p><strong>Peso Operacional:</strong> 7.8 toneladas</p>
-            <p><strong>Potência:</strong> 67 kW (90 HP)</p>
-            <p><strong>Capacidade da Caçamba:</strong> 0,4 m³</p>
-            <p><strong>Profundidade de Escavação:</strong> 4,6 metros</p>
-            <p><strong>Estado:</strong> Ótimo - Manutenção preventiva em dia</p>
-            <p><strong>Documentação:</strong> Tudo em dia</p>
-            <p><strong>Garantia:</strong> 3 meses</p>
-            <p><strong>Valor:</strong> R$ 320.000,00</p>
-            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Retroescavadeira CASE 580M" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+            <p><strong data-i18n="modal.year">Ano:</strong> 2019</p>
+            <p><strong data-i18n="modal.hours">Horímetro:</strong> 2.800 horas</p>
+            <p><strong data-i18n="modal.weight">Peso Operacional:</strong> 7.8 toneladas</p>
+            <p><strong data-i18n="modal.power">Potência:</strong> 67 kW (90 HP)</p>
+            <p><strong data-i18n="modal.bucket">Capacidade da Caçamba:</strong> 0,4 m³</p>
+            <p><strong data-i18n="modal.depth">Profundidade de Escavação:</strong> 4,6 metros</p>
+            <p><strong data-i18n="modal.condition">Estado:</strong> <span data-i18n="modal.good">Ótimo - Manutenção preventiva em dia</span></p>
+            <p><strong data-i18n="modal.documentation">Documentação:</strong> <span data-i18n="modal.allGood">Tudo em dia</span></p>
+            <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
+            <p><strong data-i18n="modal.value">Valor:</strong> R$ 320.000,00</p>
+            <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Retroescavadeira CASE 580M" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
         </div>
     </div>
 
@@ -1204,17 +1239,17 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal3')">&times;</span>
             <h2>Caminhão Caçamba Scania P310</h2>
-            <p><strong>Ano:</strong> 2017</p>
-            <p><strong>Quilometragem:</strong> 185.000 km</p>
-            <p><strong>Capacidade da Caçamba:</strong> 25 m³</p>
-            <p><strong>Potência:</strong> 231 kW (310 HP)</p>
-            <p><strong>Transmissão:</strong> Manual 8 marchas</p>
-            <p><strong>Estado:</strong> Bom - Motor revisado recentemente</p>
-            <p><strong>Documentação:</strong> Tudo em dia</p>
-            <p><strong>Garantia:</strong> 3 meses</p>
-            <p><strong>Valor:</strong> R$ 285.000,00 (Negociável)</p>
-            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Caminhão Scania P310" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+            <p><strong data-i18n="modal.year">Ano:</strong> 2017</p>
+            <p><strong data-i18n="modal.km">Quilometragem:</strong> 185.000 km</p>
+            <p><strong data-i18n="modal.bucket">Capacidade da Caçamba:</strong> 25 m³</p>
+            <p><strong data-i18n="modal.power">Potência:</strong> 231 kW (310 HP)</p>
+            <p><strong data-i18n="modal.transmission">Transmissão:</strong> Manual 8 marchas</p>
+            <p><strong data-i18n="modal.condition">Estado:</strong> <span data-i18n="modal.fair">Bom - Motor revisado recentemente</span></p>
+            <p><strong data-i18n="modal.documentation">Documentação:</strong> <span data-i18n="modal.allGood">Tudo em dia</span></p>
+            <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
+            <p><strong data-i18n="modal.value">Valor:</strong> R$ 285.000,00 (<span data-i18n="price.negotiable">Negociável</span>)</p>
+            <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Caminhão Scania P310" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
         </div>
     </div>
 
@@ -1222,18 +1257,18 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal4')">&times;</span>
             <h2>Mini Escavadeira Bobcat E35</h2>
-            <p><strong>Ano:</strong> 2020</p>
-            <p><strong>Horímetro:</strong> 1.200 horas</p>
-            <p><strong>Peso Operacional:</strong> 3.5 toneladas</p>
-            <p><strong>Potência:</strong> 20,5 kW (27,5 HP)</p>
-            <p><strong>Capacidade da Caçamba:</strong> 0,08 - 0,15 m³</p>
-            <p><strong>Profundidade de Escavação:</strong> 3,6 metros</p>
-            <p><strong>Estado:</strong> Excelente - Zero avarias</p>
-            <p><strong>Documentação:</strong> Tudo em dia</p>
-            <p><strong>Garantia:</strong> 6 meses</p>
-            <p><strong>Valor:</strong> R$ 195.000,00</p>
-            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Mini Escavadeira Bobcat E35" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+            <p><strong data-i18n="modal.year">Ano:</strong> 2020</p>
+            <p><strong data-i18n="modal.hours">Horímetro:</strong> 1.200 horas</p>
+            <p><strong data-i18n="modal.weight">Peso Operacional:</strong> 3.5 toneladas</p>
+            <p><strong data-i18n="modal.power">Potência:</strong> 20,5 kW (27,5 HP)</p>
+            <p><strong data-i18n="modal.bucket">Capacidade da Caçamba:</strong> 0,08 - 0,15 m³</p>
+            <p><strong data-i18n="modal.depth">Profundidade de Escavação:</strong> 3,6 metros</p>
+            <p><strong data-i18n="modal.condition">Estado:</strong> <span data-i18n="modal.zeroIssues">Excelente - Zero avarias</span></p>
+            <p><strong data-i18n="modal.documentation">Documentação:</strong> <span data-i18n="modal.allGood">Tudo em dia</span></p>
+            <p><strong data-i18n="modal.warranty">Garantia:</strong> 6 <span data-i18n="modal.months">meses</span></p>
+            <p><strong data-i18n="modal.value">Valor:</strong> R$ 195.000,00</p>
+            <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Mini Escavadeira Bobcat E35" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
         </div>
     </div>
 
@@ -1241,17 +1276,17 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal5')">&times;</span>
             <h2>Trator de Esteira CAT D6T</h2>
-            <p><strong>Ano:</strong> 2016</p>
-            <p><strong>Horímetro:</strong> 4.200 horas</p>
-            <p><strong>Peso Operacional:</strong> 18.2 toneladas</p>
-            <p><strong>Potência:</strong> 119 kW (160 HP)</p>
-            <p><strong>Largura da Esteira:</strong> 460 mm</p>
-            <p><strong>Estado:</strong> Ótimo - Equipamento premium</p>
-            <p><strong>Documentação:</strong> Tudo em dia</p>
-            <p><strong>Garantia:</strong> 3 meses</p>
-            <p><strong>Valor:</strong> R$ 420.000,00</p>
-            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Trator de Esteira CAT D6T" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+            <p><strong data-i18n="modal.year">Ano:</strong> 2016</p>
+            <p><strong data-i18n="modal.hours">Horímetro:</strong> 4.200 horas</p>
+            <p><strong data-i18n="modal.weight">Peso Operacional:</strong> 18.2 toneladas</p>
+            <p><strong data-i18n="modal.power">Potência:</strong> 119 kW (160 HP)</p>
+            <p><strong data-i18n="modal.trackWidth">Largura da Esteira:</strong> 460 mm</p>
+            <p><strong data-i18n="modal.condition">Estado:</strong> <span data-i18n="modal.premium">Ótimo - Equipamento premium</span></p>
+            <p><strong data-i18n="modal.documentation">Documentação:</strong> <span data-i18n="modal.allGood">Tudo em dia</span></p>
+            <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
+            <p><strong data-i18n="modal.value">Valor:</strong> R$ 420.000,00</p>
+            <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse no Trator de Esteira CAT D6T" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
         </div>
     </div>
 
@@ -1259,21 +1294,264 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal6')">&times;</span>
             <h2>Pá Carregadeira Volvo L120F</h2>
-            <p><strong>Ano:</strong> 2018</p>
-            <p><strong>Horímetro:</strong> 3.100 horas</p>
-            <p><strong>Peso Operacional:</strong> 15.8 toneladas</p>
-            <p><strong>Potência:</strong> 129 kW (173 HP)</p>
-            <p><strong>Capacidade da Caçamba:</strong> 2,0 - 3,5 m³</p>
-            <p><strong>Estado:</strong> Excelente - Revisão completa realizada</p>
-            <p><strong>Documentação:</strong> Tudo em dia</p>
-            <p><strong>Garantia:</strong> 3 meses</p>
-            <p><strong>Valor:</strong> R$ 380.000,00</p>
-            <p><strong>Formas de Pagamento:</strong> À vista com desconto ou financiamento em até 60x</p>
-            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Pá Carregadeira Volvo L120F" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;">Falar no WhatsApp</a>
+            <p><strong data-i18n="modal.year">Ano:</strong> 2018</p>
+            <p><strong data-i18n="modal.hours">Horímetro:</strong> 3.100 horas</p>
+            <p><strong data-i18n="modal.weight">Peso Operacional:</strong> 15.8 toneladas</p>
+            <p><strong data-i18n="modal.power">Potência:</strong> 129 kW (173 HP)</p>
+            <p><strong data-i18n="modal.bucket">Capacidade da Caçamba:</strong> 2,0 - 3,5 m³</p>
+            <p><strong data-i18n="modal.condition">Estado:</strong> <span data-i18n="modal.excellent">Excelente - Revisão completa realizada</span></p>
+            <p><strong data-i18n="modal.documentation">Documentação:</strong> <span data-i18n="modal.allGood">Tudo em dia</span></p>
+            <p><strong data-i18n="modal.warranty">Garantia:</strong> 3 <span data-i18n="modal.months">meses</span></p>
+            <p><strong data-i18n="modal.value">Valor:</strong> R$ 380.000,00</p>
+            <p><strong data-i18n="modal.payment">Formas de Pagamento:</strong> <span data-i18n="modal.paymentDesc">À vista com desconto ou financiamento em até 60x</span></p>
+            <a href="https://wa.me/5527999975540?text=Olá! Tenho interesse na Pá Carregadeira Volvo L120F" class="btn-primary" target="_blank" style="margin-top: 1rem; display: inline-block;" data-i18n="modal.whatsappBtn">Falar no WhatsApp</a>
         </div>
     </div>
 
     <script>
+        // Translations
+        const translations = {
+            pt: {
+                nav: { home: "Início", machines: "Máquinas", gallery: "Galeria", contact: "Contato" },
+                whatsapp: "📱 WhatsApp",
+                hero: {
+                    title: "Potencializando suas Conquistas",
+                    subtitle: "Máquinas pesadas de qualidade para transformar seus projetos",
+                    btnMachines: "Ver Máquinas",
+                    btnContact: "Fale Conosco"
+                },
+                stats: {
+                    machinesSold: "Máquinas Vendidas",
+                    inspected: "Vistoriadas",
+                    states: "Estados Atendidos",
+                    clients: "Clientes Satisfeitos"
+                },
+                machines: {
+                    title: "Nossas Máquinas",
+                    subtitle: "Equipamentos seminovos com qualidade garantida e procedência comprovada"
+                },
+                badge: { featured: "Destaque", new: "Novo", offer: "Oferta" },
+                spec: { year: "Ano:", hours: "Horímetro:", weight: "Peso:", condition: "Estado:" },
+                condition: { excellent: "Excelente", good: "Ótimo", fair: "Bom" },
+                price: { financing: "Financiamento disponível", special: "Condições especiais", negotiable: "Negociável", best: "Melhor preço" },
+                btn: { buy: "Comprar", details: "Detalhes" },
+                gallery: {
+                    title: "Galeria de Fotos",
+                    subtitle: "Conheça nossa frota e instalações"
+                },
+                testimonials: {
+                    title: "O Que Nossos Clientes Dizem",
+                    subtitle: "Depoimentos reais de quem confiou na INOVA PESADOS"
+                },
+                contact: {
+                    title: "Entre em Contato",
+                    subtitle: "Estamos prontos para atender você",
+                    infoTitle: "Informações de Contato",
+                    phone: "Telefone",
+                    whatsapp: "WhatsApp",
+                    whatsappLink: "Fale conosco agora",
+                    email: "E-mail",
+                    service: "Atendimento",
+                    serviceArea: "Todo o Brasil",
+                    formTitle: "Envie sua Mensagem"
+                },
+                form: {
+                    name: "Nome Completo",
+                    phone: "Telefone",
+                    email: "E-mail",
+                    message: "Mensagem",
+                    submit: "Enviar Mensagem"
+                },
+                footer: {
+                    description: "Especialistas em máquinas pesadas seminovas com qualidade garantida e atendimento em todo o Brasil.",
+                    quickLinks: "Links Rápidos",
+                    mainPage: "Página Principal",
+                    machines: "Máquinas",
+                    gallery: "Galeria",
+                    contact: "Contato",
+                    schedule: "Horário de Atendimento",
+                    weekdays: "Segunda a Sexta: 8h às 18h",
+                    saturday: "Sábado: 8h às 12h",
+                    sunday: "Domingo: Fechado",
+                    rights: "Todos os direitos reservados."
+                },
+                modal: {
+                    year: "Ano:",
+                    hours: "Horímetro:",
+                    weight: "Peso Operacional:",
+                    power: "Potência:",
+                    bucket: "Capacidade da Caçamba:",
+                    reach: "Alcance Máximo:",
+                    depth: "Profundidade de Escavação:",
+                    condition: "Estado:",
+                    documentation: "Documentação:",
+                    warranty: "Garantia:",
+                    value: "Valor:",
+                    payment: "Formas de Pagamento:",
+                    km: "Quilometragem:",
+                    transmission: "Transmissão:",
+                    trackWidth: "Largura da Esteira:",
+                    excellent: "Excelente - Revisão completa realizada",
+                    good: "Ótimo - Manutenção preventiva em dia",
+                    fair: "Bom - Motor revisado recentemente",
+                    zeroIssues: "Excelente - Zero avarias",
+                    premium: "Ótimo - Equipamento premium",
+                    allGood: "Tudo em dia",
+                    months: "meses",
+                    paymentDesc: "À vista com desconto ou financiamento em até 60x",
+                    whatsappBtn: "Falar no WhatsApp"
+                }
+            },
+            en: {
+                nav: { home: "Home", machines: "Machines", gallery: "Gallery", contact: "Contact" },
+                whatsapp: "📱 WhatsApp",
+                hero: {
+                    title: "Empowering Your Achievements",
+                    subtitle: "Quality heavy machinery to transform your projects",
+                    btnMachines: "View Machines",
+                    btnContact: "Contact Us"
+                },
+                stats: {
+                    machinesSold: "Machines Sold",
+                    inspected: "Inspected",
+                    states: "States Served",
+                    clients: "Satisfied Clients"
+                },
+                machines: {
+                    title: "Our Machines",
+                    subtitle: "Used equipment with guaranteed quality and proven origin"
+                },
+                badge: { featured: "Featured", new: "New", offer: "Offer" },
+                spec: { year: "Year:", hours: "Hours:", weight: "Weight:", condition: "Condition:" },
+                condition: { excellent: "Excellent", good: "Great", fair: "Good" },
+                price: { financing: "Financing available", special: "Special conditions", negotiable: "Negotiable", best: "Best price" },
+                btn: { buy: "Buy", details: "Details" },
+                gallery: {
+                    title: "Photo Gallery",
+                    subtitle: "Get to know our fleet and facilities"
+                },
+                testimonials: {
+                    title: "What Our Clients Say",
+                    subtitle: "Real testimonials from those who trusted INOVA PESADOS"
+                },
+                contact: {
+                    title: "Contact Us",
+                    subtitle: "We are ready to serve you",
+                    infoTitle: "Contact Information",
+                    phone: "Phone",
+                    whatsapp: "WhatsApp",
+                    whatsappLink: "Contact us now",
+                    email: "E-mail",
+                    service: "Service",
+                    serviceArea: "All Brazil",
+                    formTitle: "Send Your Message"
+                },
+                form: {
+                    name: "Full Name",
+                    phone: "Phone",
+                    email: "E-mail",
+                    message: "Message",
+                    submit: "Send Message"
+                },
+                footer: {
+                    description: "Specialists in used heavy machinery with guaranteed quality and service throughout Brazil.",
+                    quickLinks: "Quick Links",
+                    mainPage: "Main Page",
+                    machines: "Machines",
+                    gallery: "Gallery",
+                    contact: "Contact",
+                    schedule: "Service Hours",
+                    weekdays: "Monday to Friday: 8am to 6pm",
+                    saturday: "Saturday: 8am to 12pm",
+                    sunday: "Sunday: Closed",
+                    rights: "All rights reserved."
+                },
+                modal: {
+                    year: "Year:",
+                    hours: "Hours:",
+                    weight: "Operating Weight:",
+                    power: "Power:",
+                    bucket: "Bucket Capacity:",
+                    reach: "Maximum Reach:",
+                    depth: "Digging Depth:",
+                    condition: "Condition:",
+                    documentation: "Documentation:",
+                    warranty: "Warranty:",
+                    value: "Value:",
+                    payment: "Payment Options:",
+                    km: "Mileage:",
+                    transmission: "Transmission:",
+                    trackWidth: "Track Width:",
+                    excellent: "Excellent - Complete overhaul performed",
+                    good: "Great - Preventive maintenance up to date",
+                    fair: "Good - Engine recently overhauled",
+                    zeroIssues: "Excellent - Zero issues",
+                    premium: "Great - Premium equipment",
+                    allGood: "All up to date",
+                    months: "months",
+                    paymentDesc: "Cash with discount or financing up to 60 installments",
+                    whatsappBtn: "Talk on WhatsApp"
+                }
+            }
+        };
+
+        // Current language
+        let currentLang = localStorage.getItem('language') || 'pt';
+
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update active button
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('lang-' + lang).classList.add('active');
+            
+            // Update document language
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+            
+            // Translate all elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let translation = translations[lang];
+                
+                for (let k of keys) {
+                    translation = translation[k];
+                }
+                
+                if (translation) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translation;
+                    } else {
+                        element.textContent = translation;
+                    }
+                }
+            });
+            
+            // Update WhatsApp messages
+            updateWhatsAppLinks();
+        }
+
+        // Update WhatsApp links with translated messages
+        function updateWhatsAppLinks() {
+            const buyLinks = document.querySelectorAll('.btn-comprar');
+            buyLinks.forEach(link => {
+                const machineName = link.closest('.maquina-card').querySelector('.maquina-title').textContent;
+                const message = currentLang === 'pt' 
+                    ? `Olá! Tenho interesse em ${machineName}`
+                    : `Hello! I'm interested in ${machineName}`;
+                link.href = `https://wa.me/5527999975540?text=${encodeURIComponent(message)}`;
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            changeLanguage(currentLang);
+        });
+
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1312,14 +1590,15 @@
             const email = document.getElementById('email').value;
             const mensagem = document.getElementById('mensagem').value;
             
-            const texto = `Olá! Meu nome é ${nome}. Telefone: ${telefone}. E-mail: ${email}. Mensagem: ${mensagem}`;
+            const greeting = currentLang === 'pt' ? 'Olá! Meu nome é' : 'Hello! My name is';
+            const texto = `${greeting} ${nome}. ${currentLang === 'pt' ? 'Telefone' : 'Phone'}: ${telefone}. ${currentLang === 'pt' ? 'E-mail' : 'E-mail'}: ${email}. ${currentLang === 'pt' ? 'Mensagem' : 'Message'}: ${mensagem}`;
             const url = `https://wa.me/5527999975540?text=${encodeURIComponent(texto)}`;
             
             window.open(url, '_blank');
             
             // Reset form
             event.target.reset();
-            alert('Redirecionando para o WhatsApp...');
+            alert(currentLang === 'pt' ? 'Redirecionando para o WhatsApp...' : 'Redirecting to WhatsApp...');
         }
 
         // Animate stats on scroll
